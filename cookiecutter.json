@@ -1,0 +1,11 @@
+{
+  "repo_name": "flproj-todo",
+  "project_name": "{{ cookiecutter.repo_name.replace('-', '_') }}",
+  "friendly_name": "{{ cookiecutter.repo_name.replace('-', ' ').title() }}",
+  "description": "A short description of the data science project.",
+  "author": "Fran\u00E7ois Lefebvre",
+  "email": "flefebvre01@hotmail.com",
+  "github_user": "FrankLef",
+  "version": "0.1.0",
+  "license": ["MIT", "BSD", "ISC", "Apache 2.0", "GNU General Public v3"]
+}
