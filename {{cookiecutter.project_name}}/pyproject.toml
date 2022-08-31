@@ -27,6 +27,7 @@ prefect = "^2.2.0"
 pandas = "^1.4.3"
 numpy = "^1.23.2"
 pyodbc = "^4.0.34"
+SQLAlchemy = "^1.4.40"
 
 [tool.poetry.dev-dependencies]
 flake8 = "^5.0.4"
