@@ -1,5 +1,3 @@
-from functools import total_ordering
-import pytest
 import flproj_todo.etl
 
 

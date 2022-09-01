@@ -1,4 +1,3 @@
-from socket import if_nameindex
 import urllib
 
 import pandas as pd
