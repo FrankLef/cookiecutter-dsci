@@ -5,10 +5,10 @@ import sqlalchemy as sa
 
 
 def build_engine(path: str) -> sa.engine:
-    """Create an SQLAlchemy engine for MS Access.
+    """Create SQLAlchemy engine for MS Access.
 
     Args:
-        path (str): Path to an MS Access database.
+        path (str): Path to MS Access database.
 
     Returns:
         sa.engine: SQLAlchemy engine for MS Access.
@@ -26,11 +26,11 @@ def extract_acc(tables: set[str], engine: sa.engine) -> dict:
     """Extract data from MS Access.
 
     Args:
-        tables (set[str]): Names of tables/query from MS Access.
+        tables (set[str]): Names of tables.
         engine (sa.engine): SQLAlchemy engine for MS Access.
 
     Returns:
-        dict: Datasets extracted from MS Access.
+        dict: Datasets from MS Access.
     """
     out = {}
     for tbl in tables:
