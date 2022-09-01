@@ -45,6 +45,10 @@ isort = "^5.10.1"
 nox = "^2022.8.7"
 nox-poetry = "^1.0.1"
 
+[tool.pytest.ini_options]
+minversion = "7.0"
+addopts = "-ra -q"
+
 [tool.isort]
 profile = "black"
 

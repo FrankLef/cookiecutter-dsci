@@ -41,13 +41,18 @@ def extract_acc(tables: set[str], engine: sa.engine) -> dict:
     return out
 
 
-def main():
-    # MANUAL ENTRY
-    path_str = r"C:\Users\Public\MyJob\DesjCap_cies\PHT\db_PHT_V1_xprt.accdb"
-    acc_engine = build_engine(path=path_str)
-    # MANUAL ENTRY
-    the_tables = {"tbl_xprt_sales_grp", "tbl_xprt_part"}
-    raw_data = extract_acc(tables=the_tables, engine=acc_engine)
+def main(path: str, tables: set[str]) -> dict:
+    """Extract data from MS Access.
+
+    Args:
+        path (str): Path to MS Access database.
+        tables (set[str]): Tables/Views to extract from MS Access.
+
+    Returns:
+        dict: Datasets from MS Access.
+    """
+    acc_engine = build_engine(path=path)
+    raw_data = extract_acc(tables=tables, engine=acc_engine)
     # print the shape of every table
     {tbl: print(df.shape) for (tbl, df) in raw_data.items()}
     return raw_data
