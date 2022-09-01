@@ -1,6 +1,6 @@
-import flproj_todo.etl
+import flproj_todo.etl as etl
 
 
 def test_etl():
-    out = flproj_todo.etl.main()
+    out = etl.main()
     assert isinstance(out, dict)
