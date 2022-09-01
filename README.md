@@ -96,14 +96,21 @@ is still used. To delete it use this command
 
 ### Step 3 Automate tasks with `nox`
 
-`nox` will automate tasks. A sample test has been added in `..\tests\test_sample.py` to validate `nox`
-by issuing this command
+`nox` will automate tasks. A task for linting has been created and can be used to test the nox install
+as follows.
 
-    nox --session tests
+    nox --session lint
 
 also the list of nox sessions availbale can be obtained with
 
     nox --list
+
+**Important**: There is no `tests` section in the `noxfile.py` used for project as
+
+* it creates a wheel which takes a long time and is not necessary
+* changes the name of the project and insert an hyphen
+* requires an `src` folder and to change the structure
+* **it's a lot of problems!**
 
 ### Step 4 Setup the new `.git`
 
