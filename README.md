@@ -157,7 +157,7 @@ This is how the new project will be organized.
 
     ├── .gitignore                <- GitHub's excellent Python .gitignore customized for this project.
     ├── pre-commit-config.yaml    <- Settings for `pre-commit`.
-    ├── LICENSE                   <- Your project's license.
+    ├── LICENSE                   <- The project's license.
     ├── mkdocs.yml                <- Settings for `mkdocs`.
     ├── noxfile.py                <- Functions used by `nox`.
     ├── pyproject.toml            <- The pyproject file used by `poetry` to manage the environment.
