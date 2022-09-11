@@ -62,7 +62,7 @@ then move to `parent` first
 
 verify that `cookiecutter` is properly installed by calling its version
 
-    cookicutter --version
+    cookiecutter --version
 
 then generate the project
 
