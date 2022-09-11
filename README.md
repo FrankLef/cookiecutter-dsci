@@ -43,6 +43,9 @@ and the packages to build the project are
 |[requests]|HTTP library for Python|
 |[prefect]|Manage the dataflow|
 |[pandas]|Data analysis and manipulaiton tool|
+|[numpy]|Scientific computing|
+|[pyodbc]|Access ODBC database|
+|[SQLAlchemy]|SQL toolkit and object relational mapper|
 
 ## Acknowledgements
 
@@ -211,3 +214,6 @@ This is how the new project will be organized.
 [requests]: https://requests.readthedocs.io/en/latest/
 [prefect]: https://docs.prefect.io
 [pandas]: https://pandas.pydata.org
+[numpy]: https://numpy.org
+[pyodbc]: https://pypi.org/project/pyodbc/
+[SQLAlchemy]: https://www.sqlalchemy.org
