@@ -5,4 +5,4 @@ an **information-oriented** approach. Use it as a
 reference for the technical implementation of the
 `{{cookiecutter.project_name}}` project code.
 
-::: pipelines.flproj_todo.etl
+::: pipelines.{{cookiecutter.project_name}}.etl
