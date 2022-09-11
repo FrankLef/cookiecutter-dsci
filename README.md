@@ -10,7 +10,7 @@ Cookiecutter for data science projects by Ephel. The main objective of this cook
 
 ## Features
 
-The primary packages, used to create and manage the projects are the following
+The primary packages, used to manage the template and environment are the following
 
 |package|description|
 |:-----|:-----------------|
@@ -35,7 +35,7 @@ The packages used to ensure code quality and documentation are
 |[mkdocstrings]|Automatic documentation|
 |[isort]|Sort imports and separate them into sections and types|
 
-and the packages to build the project/package or library are
+and the packages to build the project are
 
 |package|description|
 |:-----|:-----------------|
@@ -96,14 +96,21 @@ is still used. To delete it use this command
 
 ### Step 3 Automate tasks with `nox`
 
-`nox` will automate tasks. A sample test has been added in `..\tests\test_sample.py` to validate `nox`
-by issuing this command
+`nox` will automate tasks. A task for linting has been created and can be used to test the nox install
+as follows.
 
-    nox --session tests
+    nox --session lint
 
 also the list of nox sessions availbale can be obtained with
 
     nox --list
+
+**Important**: There is no `tests` section in the `noxfile.py` used for project as
+
+* it creates a wheel which takes a long time and is not necessary
+* changes the name of the project and insert an hyphen
+* requires an `src` folder and to change the structure
+* **it's a lot of problems!**
 
 ### Step 4 Setup the new `.git`
 

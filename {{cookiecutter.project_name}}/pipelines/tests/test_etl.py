@@ -16,3 +16,8 @@ def test_etl(acc_info):
     out = etl.main(path=acc_info[0], tables=acc_info[1])
     assert isinstance(out, dict)
     assert len(out) == len(acc_info)
+
+
+def test_etl_err(acc_info):
+    with pytest.raises(FileNotFoundError):
+        etl.main(path="WRONG", tables=acc_info[1])
