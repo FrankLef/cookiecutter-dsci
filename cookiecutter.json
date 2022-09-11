@@ -1,5 +1,5 @@
 {
-  "repo_name": "flproj-todo",
+  "repo_name": "flproj_todo",
   "project_name": "{{ cookiecutter.repo_name.replace('-', '_') }}",
   "friendly_name": "{{ cookiecutter.repo_name.replace('-', ' ').title() }}",
   "description": "A short description of the data science project.",
