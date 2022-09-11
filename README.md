@@ -158,18 +158,14 @@ this command
 
     mkdocs serve
 
-which should give you something like this. Simply copy the http address to a browser address bar 
+which should give you something like this. Simply copy the http address to a browser address bar
 to see the documentation site.
 
-```shell
-INFO    -  Building documentation...
-INFO    -  Cleaning site directory
-INFO    -  Documentation built in 0.22 seconds
-[I 220510 0:0:0 server:335] Serving on http://127.0.0.1:8000
-INFO    -  Serving on http://127.0.0.1:8000
-```
-
-
+    INFO    -  Building documentation...
+    INFO    -  Cleaning site directory
+    INFO    -  Documentation built in 0.22 seconds
+    [I 220510 0:0:0 server:335] Serving on http://127.0.0.1:8000
+    INFO    -  Serving on http://127.0.0.1:8000
 
 ## Directory structure
 
