@@ -10,7 +10,7 @@ Cookiecutter for data science projects by Ephel. The main objective of this cook
 
 ## Features
 
-The primary packages, used to create and manage the projects are the following
+The primary packages, used to manage the template and environment are the following
 
 |package|description|
 |:-----|:-----------------|
@@ -35,7 +35,7 @@ The packages used to ensure code quality and documentation are
 |[mkdocstrings]|Automatic documentation|
 |[isort]|Sort imports and separate them into sections and types|
 
-and the packages to build the project/package or library are
+and the packages to build the project are
 
 |package|description|
 |:-----|:-----------------|
@@ -62,7 +62,7 @@ then move to `parent` first
 
 verify that `cookiecutter` is properly installed by calling its version
 
-    cookicutter --version
+    cookiecutter --version
 
 then generate the project
 
