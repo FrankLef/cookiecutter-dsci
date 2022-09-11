@@ -135,7 +135,7 @@ Then run the git commands
     # -f switch forces Git to overwrite anyfile that already exist on GitHub
     git push -u -f origin main
 
-### Step 5 `pre-commit`
+### Step 5 Install `pre-commit`
 
 Once `.git` is setup, make sure to include the pre-commit script in `.git`
 by running this command from the poetry shell
@@ -151,7 +151,7 @@ It is also a good idea to run the hooks against all files when adding a new hook
 
     pre-commit run --all-files
 
-### Step 6 `mkdocs`
+### Step 6 Create the documentation with `mkdocs`
 
 You can also verify that the documentation setup is working by building the site with
 this command
