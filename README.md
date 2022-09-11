@@ -41,6 +41,8 @@ and the packages to build the project are
 |:-----|:-----------------|
 |[typer]|Command line interface|
 |[requests]|HTTP library for Python|
+|[prefect]|Manage the dataflow|
+|[pandas]|Data analysis and manipulaiton tool|
 
 ## Acknowledgements
 
@@ -202,9 +204,10 @@ This is how the new project will be organized.
 [pytest]: https://pypi.org/project/pytest/
 [mypy]: http://www.mypy-lang.org
 [typeguard]: https://typeguard.readthedocs.io/en/latest/
+[isort]: https://github.com/PyCQA/isort
 [MkDocs]: https://www.mkdocs.org
 [mkdocstrings]: https://mkdocstrings.github.io
 [typer]: https://typer.tiangolo.com
 [requests]: https://requests.readthedocs.io/en/latest/
 [prefect]: https://docs.prefect.io
-[isort]: https://github.com/PyCQA/isort
+[pandas]: https://pandas.pydata.org
