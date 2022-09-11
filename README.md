@@ -156,7 +156,10 @@ It is also a good idea to run the hooks against all files when adding a new hook
 This is how the new project will be organized.
 
     ├── .gitignore                <- GitHub's excellent Python .gitignore customized for this project.
+    ├── pre-commit-config.yaml    <- Settings for `pre-commit`.
     ├── LICENSE                   <- Your project's license.
+    ├── mkdocs.yml                <- Settings for `mkdocs`.
+    ├── noxfile.py                <- Functions used by `nox`.
     ├── pyproject.toml            <- The pyproject file used by `poetry` to manage the environment.
     ├── README.md                 <- The top-level README for developers using this project.
     │
@@ -167,12 +170,15 @@ This is how the new project will be organized.
     │   └── 2_final               <- The final, canonical data sets for modeling.
     │
     ├── docs                      <- GitHub pages website.
-    │   ├── data_dics             <- Data dictionaries.
-    │   └── references            <- Papers, manuals, and all other explanatory materials.
+    │   ├── explanation.md        <- Understanding-oriented documentation.
+    │   ├── how-to-guides.md      <- Problem-oriented documentation.
+    │   ├── index.md              <- The index page for the whole documentation.
+    │   ├── reference.md          <- Information-oriented documentation.
+    │   └── tutorials.md          <- Learning-oriented documentation.
     │
     ├── notebooks                 <- Jupyter notebooks. Naming convention is a number (for ordering),
     │                                the creator's initials, and a short `_` delimited description, e.g.
-    │                                `01_cp_exploratory_data_analysis.ipynb`.
+    │                                `01_fl_exploratory_data_analysis.ipynb`.
     │
     ├── output
     │   ├── features              <- Fitted and serialized features.
@@ -181,9 +187,8 @@ This is how the new project will be organized.
     │       └── data              <- Generated graphics, figures, tables, etc. to be used in reporting.
     │
     ├── pipelines                 <- Pipelines and data workflows.
-        ├── pyproject.toml        <- The pyproject file used by `poetry` to manage the pipeline environment.
         ├── pipelines.py          <- The CLI entry point for all the pipelines.
-        ├── <repo_name>           <- Code for the various steps of the pipelines.
+        ├── <project_name>        <- Code for the various steps of the pipelines.
         │   ├──  __init__.py
         │   ├── etl.py            <- Download, generate, and process data.
         │   ├── visualize.py      <- Create exploratory and results oriented visualizations.
@@ -193,7 +198,7 @@ This is how the new project will be organized.
             ├── fixtures          <- Where to put example inputs and outputs.
             │   ├── input.json    <- Test input data.
             │   └── output.json   <- Test output data.
-            └── test_pipelines.py <- Integration tests for the HTTP API.
+            └── test_samples.py   <- Test example to verify `pytest`.
 
 [cookiecutter]: https://github.com/audreyr/cookiecutter
 [poetry]: https://pypi.org/project/poetry/

@@ -1,4 +1,4 @@
-site_name: flproj_todo (Project name)
+site_name: {{ cookiecutter.project_name }} (Project name)
 
 theme:
   name: "material"
