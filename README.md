@@ -91,6 +91,8 @@ of all commands and
 updated with the right packages and versions, and run `poetry show` to verify if there are
 inconsistencies.
 
+These steps are encoded in the Makefile and can be run as follows
+
     make poetry_update
 
 Sometimes, especially when reusing a folder that had been used as a project before, the old environment
