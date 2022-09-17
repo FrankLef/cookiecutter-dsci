@@ -1,6 +1,6 @@
 {
   "project_name": "flproj_todo",
-  "title_name": "{{ cookiecutter.repo_name.replace('-', ' ').title() }}",
+  "title_name": "{{ cookiecutter.project_name }}.replace('-', ' ').title()",
   "description": "A short description of the data science project.",
   "author": "Fran\u00E7ois Lefebvre",
   "email": "flefebvre01@hotmail.com",
