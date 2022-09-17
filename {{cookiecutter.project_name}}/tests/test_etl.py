@@ -1,6 +1,6 @@
 import pytest
 
-import src.{{ cookiecutter.project_name }}.etl as etl
+import src.process.etl as etl
 
 
 @pytest.fixture

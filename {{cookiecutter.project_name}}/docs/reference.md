@@ -5,4 +5,4 @@ an **information-oriented** approach. Use it as a
 reference for the technical implementation of the
 `{{cookiecutter.project_name}}` project code.
 
-::: src.{{cookiecutter.project_name}}.etl
+::: src.process.etl

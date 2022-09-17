@@ -157,6 +157,7 @@ This is how the new project will be organized.
     ├── .gitignore                <- GitHub's excellent Python .gitignore customized for this project.
     ├── pre-commit-config.yaml    <- Settings for `pre-commit`.
     ├── LICENSE                   <- The project's license.
+    ├── Makefile                  <- Scripts to automate tasks.
     ├── mkdocs.yml                <- Settings for `mkdocs`.
     ├── noxfile.py                <- Sessions used by `nox`.
     ├── pyproject.toml            <- Configuration file used by `poetry` to manage the environment.
@@ -185,9 +186,9 @@ This is how the new project will be organized.
     │   └── reports               <- Generated analyses as HTML, PDF, LaTeX, etc.
     │       └── data              <- Generated graphics, figures, tables, etc. used in reporting.
     │
-    ├── pipelines                 <- Pipelines and data workflows.
-        ├── pipelines.py          <- The CLI entry point for all the pipelines.
-        ├── <project_name>        <- Code for the various steps of the pipelines.
+    ├── src                       <- Store the source code.
+        ├── process.py            <- The CLI entry point for all the processes/pipelines.
+        ├── process               <- Code for the various steps of the processes/pipelines.
         │   ├──  __init__.py
         │   ├── etl.py            <- Download, generate, and process data.
         │   ├── visualize.py      <- Create visualizations.
