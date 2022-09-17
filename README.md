@@ -200,14 +200,14 @@ This is how the new project will be organized.
     │   ├── features              <- Fitted and serialized features.
     │   ├── models                <- Trained and serialized models, model predictions, or model summaries.
     │   └── reports               <- Generated analyses as HTML, PDF, LaTeX, etc.
-    │       └── data              <- Generated graphics, figures, tables, etc. to be used in reporting.
+    │       └── data              <- Generated graphics, figures, tables, etc. used in reporting.
     │
     ├── pipelines                 <- Pipelines and data workflows.
         ├── pipelines.py          <- The CLI entry point for all the pipelines.
         ├── <project_name>        <- Code for the various steps of the pipelines.
         │   ├──  __init__.py
         │   ├── etl.py            <- Download, generate, and process data.
-        │   ├── visualize.py      <- Create exploratory and results oriented visualizations.
+        │   ├── visualize.py      <- Create visualizations.
         │   ├── features.py       <- Turn raw data into features for modeling.
         │   └── train.py          <- Train and evaluate models.
         └── tests
