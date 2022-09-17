@@ -5,7 +5,7 @@
   "author": "Fran\u00E7ois Lefebvre",
   "email": "flefebvre01@hotmail.com",
   "git_user": "FrankLef",
-  "git_repo": "https://github.com/FrankLef/{{ cookiecutter.project_name }}.git",
+  "git_repo": "https://github.com/{{cookiecutter.git_user}}/{{cookiecutter.project_name}}.git",
   "version": "0.1.0",
   "license": ["MIT", "BSD", "ISC", "Apache 2.0", "GNU General Public v3"]
 }
