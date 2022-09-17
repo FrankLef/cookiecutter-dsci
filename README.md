@@ -16,8 +16,6 @@ The primary packages, used to manage the template and environment are the follow
 |:-----|:-----------------|
 |[cookiecutter]|Project templates|
 |[poetry]|Project dependency|
-|[nox]|Task automation|
-|[nox-poetry]|Enable `session.install` to use the Poetry lock file|
 
 The packages used to ensure code quality and documentation are
 
@@ -110,16 +108,9 @@ First create the new repo in github
 * Give the repo the exact same name as the project. That is keep the underscore in the name when there one. i.e. flproj_todo is also flproj_todo in github.
 * Don't create `README`, `.gitignore` and `LICENSE` with the new repo they will be overriden anyway.
 
-Then run the git commands
+Then initialize git using
 
-    git init
-    git add --all
-    git commit -m "initialize"
-    git branch -M main
-    git remote add origin https://github.com/FrankLef/flproj-todo.git
-    # -u switch makes the remote repo the default for theexisting project
-    # -f switch forces Git to overwrite anyfile that already exist on GitHub
-    git push -u -f origin main
+    make git_init
 
 ### Step 5 Install `pre-commit`
 
@@ -204,8 +195,6 @@ This is how the new project will be organized.
 
 [cookiecutter]: https://github.com/audreyr/cookiecutter
 [poetry]: https://pypi.org/project/poetry/
-[nox]: https://nox.thea.codes/en/stable/
-[nox-poetry]: https://github.com/cjolowicz/nox-poetry
 [flake8]: https://pypi.org/project/flake8/
 [pep8-naming]: https://pythonfix.com/pkg/p/pep8-naming/
 [black]: https://pypi.org/project/black/

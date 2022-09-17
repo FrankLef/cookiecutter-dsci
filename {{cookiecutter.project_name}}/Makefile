@@ -1,7 +1,9 @@
 project_name := "{{ cookiecutter.project_name }}"
+git_user := "{{ cookiecutter.git_user }}"
+git_email := "{{ cookiecutter.git_email }}"
 git_repo := "{{ cookiecutter.git_repo }}"
 
-# the first target is the dfault
+# the first target is the default
 all: hello
 
 hello:
@@ -20,7 +22,7 @@ hello:
 	# make the beep sound
 	@echo -e "\x7"
 
-lint: isort flake8
+lint: isort flake
 
 isort:
 	# run sort imports
@@ -28,25 +30,18 @@ isort:
 	@echo -e "\x1b[1;32misort ok!\x1b[0m"
 
 flake:
-	# run sort imports
 	flake8 . -v
 	@echo -e "\x1b[1;32mflake8 ok!\x1b[0m"
 
 git_init:
-	# Initialise git repo
+	# initialize git_repo
 	git init
-	# use the "main" branch
 	git branch -M main
-	# add the remote
 	git remote add origin ${git_repo}
-	# add all files to git
 	git add -A
-	git commit -m "initialize"
-	# -u switch makes the remote repo the default for theexisting project
-	# -f switch forces Git to overwrite anyfile that already exist on GitHub
-    git push -u -f origin main
+	git -c user.name=${git_user} -c user.email=${git_email} commit -m "initialize"
+	git push -u -f origin main
 	@echo -e "\x1b[1;32mgit initialized successfully.\x1b[0m"
 
-
 test:
-	@echo -e "\x1b[1;37mHello World\x1b[0m"
+	@echo -e "\x1b[1;37mThis is a test\x1b[0m"
