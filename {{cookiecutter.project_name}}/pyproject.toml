@@ -5,8 +5,8 @@ description = "{{cookiecutter.description}}"
 authors = ["{{cookiecutter.author}} <{{cookiecutter.email}}>"]
 license = "{{cookiecutter.license}}"
 readme = "README.md"
-homepage = "{{cookiecutter.git_repo}}"
-repository = "{{cookiecutter.git_repo}}"
+homepage = "{{cookiecutter.__git_repo}}"
+repository = "{{cookiecutter.__git_repo}}"
 documentation = "https://{{cookiecutter.project_name}}.readthedocs.io"
 classifiers = [
     "Programming Language :: Python :: 3.6",
@@ -17,7 +17,7 @@ classifiers = [
 ]
 
 [tool.poetry.urls]
-Changelog = "{{cookiecutter.git_repo}}/releases"
+Changelog = "{{cookiecutter.__git_repo}}/releases"
 
 [tool.poetry.dependencies]
 python = "^3.10.6"
