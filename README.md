@@ -49,9 +49,12 @@ and the packages to build the project are
 
 The overall choices of packages is inspired from [hypermodern Python cookiecutter](https://cookiecutter-hypermodern-python.readthedocs.io/en/2020.6.15/index.html).
 
-This data science project template is heavily inspired from
+This data science project template is inspired from
 [cookiecutter-modern-datascience](https://github.com/crmne/cookiecutter-modern-datascience)
 for the directory structure.
+
+The cookiecutter [data-science-tamplate](https://github.com/khuyentran1401/data-science-template) by
+Khuyen Tran was also very much used.
 
 ## Quickstart
 
@@ -73,20 +76,20 @@ then generate the project
 
 and **make the new folder the working directory**.
 
-### Step 2 Manage the dependencies with `poetry`
+### Step 2 Automate tasks with `Makefile`
 
-The first thing to do is to open the poetry shell to avoid having to always add `poetry run` in front of all commands.
+`Make` will automate tasks. The Make file will be used repeatedly hereinafter to automate the tasks.
 
-    poetry shell
+### Step 3 Manage the dependencies with `poetry`
 
-then run `poetry update` so that the `poetry.lock` file will be created and the virtual environment
+* run `postry shell` to open the poetry shell and avoid having to always add `poetry run`in front
+of all commands and
+* run `poetry update` so that the `poetry.lock` file will be created and the virtual environment
 updated with the right packages and versions.
 
-    poetry update
+This is all encodedd in the `Makefile` so lets use it
 
-To add or remove from the `pyproject.toml` file **you must use the `add` and `remove` commands from `poetry`**.
-**Don't do it manually**, otherwise the dependencies are not resolved and errors will probably be raised when doing
-the `show` command.
+    make poetry_start
 
 It is a good idea to check poetry with `show`, it will raise an eror if there is any inconsistency.
 
@@ -97,9 +100,8 @@ is still used. To delete it use this command
 
     poetry env remove <python>
 
-### Step 3 Automate tasks with `Makefile`
-
-`Make` will automate tasks. The Make file will be used repeatedly hereinafter to automate the tasks.
+run `poetry update` so that the `poetry.lock` file will be created and the virtual environment
+updated with the right packages and versions.
 
 ### Step 4 Setup the new `.git`
 

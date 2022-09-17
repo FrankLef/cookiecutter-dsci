@@ -23,6 +23,10 @@ hello:
 	# make the beep sound
 	@echo -e "\x7"
 
+poetry_start:
+	poetry shell
+	poetry update
+
 lint: isort flake
 
 isort:
