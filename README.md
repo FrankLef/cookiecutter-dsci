@@ -83,7 +83,7 @@ and **make the new folder the working directory**.
 ### Step 3 Manage the dependencies with `poetry`
 
 Run `poetry shell` to open the poetry shell and avoid having to always add `poetry run`in front
-of all commands and
+of all commands
 
     poetry shell
 
