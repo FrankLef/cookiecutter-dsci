@@ -154,51 +154,52 @@ to see the documentation site.
 
 This is how the new project will be organized.
 
-    ├── .gitignore                <- GitHub's excellent Python .gitignore customized for this project.
+    ├── .gitignore                <- GitHub's Python .gitignore customized for this project.
     ├── pre-commit-config.yaml    <- Settings for `pre-commit`.
     ├── LICENSE                   <- The project's license.
     ├── Makefile                  <- Scripts to automate tasks.
-    ├── mkdocs.yml                <- Settings for `mkdocs`.
+    ├── mkdocs.yaml               <- Settings for `mkdocs`.
     ├── noxfile.py                <- Sessions used by `nox`.
-    ├── pyproject.toml            <- Configuration file used by `poetry` to manage the environment.
+    ├── pyproject.toml            <- Configuration file used by `poetry`.
     ├── README.md                 <- The top-level README for developers using this project.
-    │
+    ├── config                    <- Configuration files used by `hydra`.
+    │   ├── main.yaml             <- Main configuration file.
+    │   └── process               <- Configurations for data processing.
+    │       ├── process01a.yaml   <- Config file.
+    │       └── process02a.yaml   <- Config file.
     ├── data
     │   ├── 0_raw                 <- The original, immutable data dump.
     │   ├── 0_external            <- Data from third party sources.
     │   ├── 1_interim             <- Intermediate data that has been transformed.
     │   └── 2_final               <- The final, canonical data sets for modeling.
-    │
     ├── docs                      <- GitHub pages website.
     │   ├── explanation.md        <- Understanding-oriented documentation.
     │   ├── how-to-guides.md      <- Problem-oriented documentation.
     │   ├── index.md              <- The index page for the whole documentation.
     │   ├── reference.md          <- Information-oriented documentation.
     │   └── tutorials.md          <- Learning-oriented documentation.
-    │
     ├── notebooks                 <- Jupyter notebooks. Naming convention is a number (for ordering),
     │                                the creator's initials, and a short `_` delimited description, e.g.
     │                                `01_fl_exploratory_data_analysis.ipynb`.
-    │
     ├── output
     │   ├── features              <- Fitted and serialized features.
     │   ├── models                <- Trained and serialized models, model predictions, or model summaries.
     │   └── reports               <- Generated analyses as HTML, PDF, LaTeX, etc.
     │       └── data              <- Generated graphics, figures, tables, etc. used in reporting.
-    │
     ├── src                       <- Store the source code.
-        ├── process.py            <- The CLI entry point for all the processes/pipelines.
-        ├── process               <- Code for the various steps of the processes/pipelines.
-        │   ├──  __init__.py
-        │   ├── etl.py            <- Download, generate, and process data.
-        │   ├── visualize.py      <- Create visualizations.
-        │   ├── features.py       <- Turn raw data into features for modeling.
-        │   └── train.py          <- Train and evaluate models.
-        └── tests
-            ├── fixtures          <- Where to put example inputs and outputs.
-            │   ├── input.json    <- Test input data.
-            │   └── output.json   <- Test output data.
-            └── test_samples.py   <- Test example to verify `pytest`.
+    │   ├── process.py            <- The CLI entry point for all the processes/pipelines.
+    │   └── process               <- Code for the various steps of the processes/pipelines.
+    │       ├──  __init__.py
+    │       ├── etl.py            <- Download, generate, and process data.
+    │       ├── visualize.py      <- Create visualizations.
+    │       ├── features.py       <- Turn raw data into features for modeling.
+    │       └── train.py          <- Train and evaluate models.
+    └── tests                 <- All test and fixtures files used by `pytest`.
+        ├── fixtures          <- Where to put example inputs and outputs.
+        │   ├── input.json    <- Test input data.
+        │   └── output.json   <- Test output data.
+        ├── test_etl          <- Test example on `etl.py`.
+        └── test_samples.py   <- Test example to verify `pytest`.
 
 [cookiecutter]: https://github.com/audreyr/cookiecutter
 [poetry]: https://pypi.org/project/poetry/

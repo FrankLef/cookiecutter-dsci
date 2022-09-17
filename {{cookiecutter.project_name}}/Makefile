@@ -10,6 +10,7 @@ hello:
 	# Reference for customized echo
 	# CMD equivalent @echo ^[[101;93;1mHello^[[0m
 	# \x1b is ASCII hex for ESC
+	# see ANSI escape code at https://ss64.com/nt/syntax-ansi.html
 	@echo -e "\x1b[1;36mInfo!\x1b[0m"
 	@echo -e "\x1b[1;32mSuccess!\x1b[0m"
 	@echo -e "\x1b[1;33mWarning!\x1b[0m"
