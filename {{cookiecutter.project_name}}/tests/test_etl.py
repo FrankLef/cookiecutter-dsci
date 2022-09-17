@@ -1,6 +1,6 @@
 import pytest
 
-import flproj_todo.etl as etl
+import src.etl as etl
 
 
 @pytest.fixture

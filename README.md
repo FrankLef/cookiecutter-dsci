@@ -128,7 +128,13 @@ It is also a good idea to run the hooks against all files when adding a new hook
 
     pre-commit run --all-files
 
-### Step 6 Create the documentation with `mkdocs`
+### Step 6 Run `make lint`
+
+To run `isort` and `flake8` and verify all is in order run this make command
+
+    make lint
+
+### Step 7 Create the documentation with `mkdocs`
 
 You can also verify that the documentation setup is working by building the site with
 this command
