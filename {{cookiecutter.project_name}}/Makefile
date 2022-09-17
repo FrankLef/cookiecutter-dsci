@@ -49,6 +49,7 @@ git_init:
 	git -c user.name=${git_user} -c user.email=${git_email} commit -m "initialize"
 	git push -u -f origin main
 	@echo -e "\x1b[1;32mgit initialized successfully.\x1b[0m"
+	@echo -e "\x7"
 
 test:
 	@echo -e "\x1b[1;37mThis is a test\x1b[0m"
