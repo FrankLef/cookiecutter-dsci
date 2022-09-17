@@ -175,8 +175,8 @@ This is how the new project will be organized.
     ├── pre-commit-config.yaml    <- Settings for `pre-commit`.
     ├── LICENSE                   <- The project's license.
     ├── mkdocs.yml                <- Settings for `mkdocs`.
-    ├── noxfile.py                <- Functions used by `nox`.
-    ├── pyproject.toml            <- The pyproject file used by `poetry` to manage the environment.
+    ├── noxfile.py                <- Sessions used by `nox`.
+    ├── pyproject.toml            <- Configuration file used by `poetry` to manage the environment.
     ├── README.md                 <- The top-level README for developers using this project.
     │
     ├── data
