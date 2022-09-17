@@ -99,29 +99,15 @@ is still used. To delete it use this command
 
     poetry env remove <python>
 
-### Step 3 Automate tasks with `nox`
+### Step 3 Automate tasks with `Makefile`
 
-`nox` will automate tasks. A task for linting has been created and can be used to test the nox install
-as follows.
-
-    nox --session lint
-
-also the list of nox sessions availbale can be obtained with
-
-    nox --list
-
-**Important**: There is no `tests` section in the `noxfile.py` used for project as
-
-* it creates a wheel which takes a long time and is not necessary
-* changes the name of the project and insert an hyphen
-* requires an `src` folder and to change the structure
-* **it's a lot of problems!**
+`Make` will automate tasks. The Make file will be used repeatedly hereinafter to automate the tasks.
 
 ### Step 4 Setup the new `.git`
 
 First create the new repo in github
 
-* Don't forget the hyphen instead of the underscore in the name. i.e. flproj_todo becomes flproj-todo in github.
+* Give the repo the exact same name as the project. That is keep the underscore in the name when there one. i.e. flproj_todo is also flproj_todo in github.
 * Don't create `README`, `.gitignore` and `LICENSE` with the new repo they will be overriden anyway.
 
 Then run the git commands
