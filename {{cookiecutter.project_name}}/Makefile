@@ -26,6 +26,7 @@ hello:
 poetry_start:
 	poetry shell
 	poetry update
+	@echo -e "\x1b[1;32mpoetry ok!\x1b[0m"
 
 lint: isort flake
 
