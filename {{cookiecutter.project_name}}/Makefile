@@ -23,13 +23,11 @@ hello:
 	# make the beep sound
 	@echo -e "\x7"
 
-poetry_start:
-	poetry shell
-	# wait 5 seconds before continuing
-	# otherwise poetry update doesn't run
-	sleep 5s
+poetry_update:
 	poetry update
-	@echo -e "\x1b[1;32mpoetry ok!\x1b[0m"
+	# use poetry show to check if inconsistency
+	poetry show
+	@echo -e "\x1b[1;32mpoetry update ok!\x1b[0m"
 
 lint: isort flake
 

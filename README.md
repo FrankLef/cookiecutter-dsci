@@ -84,24 +84,23 @@ and **make the new folder the working directory**.
 
 * run `poetry shell` to open the poetry shell and avoid having to always add `poetry run`in front
 of all commands and
+
+    poetry shell
+
 * run `poetry update` so that the `poetry.lock` file will be created and the virtual environment
-updated with the right packages and versions.
+updated with the right packages and versions, and run `poetry show` to verify if there are
+inconsistencies.
 
-This is all encodedd in the `Makefile` so lets use it
-
-    make poetry_start
-
-It is a good idea to check poetry with `show`, it will raise an eror if there is any inconsistency.
-
-    poetry show
+    make poetry_update
 
 Sometimes, especially when reusing a folder that had been used as a project before, the old environment
-is still used. To delete it use this command
+is still used. To see the environment curently opened by `poetry` use this
+
+    poetry env list
+
+To delete the old environment use this command
 
     poetry env remove <python>
-
-run `poetry update` so that the `poetry.lock` file will be created and the virtual environment
-updated with the right packages and versions.
 
 ### Step 4 Setup the new `.git`
 
