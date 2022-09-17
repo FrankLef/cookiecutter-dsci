@@ -82,12 +82,12 @@ and **make the new folder the working directory**.
 
 ### Step 3 Manage the dependencies with `poetry`
 
-* run `poetry shell` to open the poetry shell and avoid having to always add `poetry run`in front
+Run `poetry shell` to open the poetry shell and avoid having to always add `poetry run`in front
 of all commands and
 
     poetry shell
 
-* run `poetry update` so that the `poetry.lock` file will be created and the virtual environment
+Run `poetry update` so that the `poetry.lock` file will be created and the virtual environment
 updated with the right packages and versions, and run `poetry show` to verify if there are
 inconsistencies. These steps are encoded in the Makefile and can be run as follows
 
