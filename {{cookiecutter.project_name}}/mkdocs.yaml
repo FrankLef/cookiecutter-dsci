@@ -1,4 +1,4 @@
-site_name: {{ cookiecutter.__git_repo }} (Repo name)
+site_name: {{ cookiecutter.git_repo }} (Repo name)
 
 theme:
   name: "material"

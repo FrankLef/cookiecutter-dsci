@@ -4,9 +4,9 @@
   "description": "A short description of the data science project.",
   "author": "Fran\u00E7ois Lefebvre",
   "email": "flefebvre01@hotmail.com",
-  "__git_user": "FrankLef",
-  "__git_email": "https://github.com/{{cookiecutter.__git_user}}",
-  "__git_repo": "{{cookiecutter.__git_email}}/{{cookiecutter.project_name}}.git",
+  "git_user": "FrankLef",
+  "git_email": "https://github.com/{{cookiecutter.__git_user}}",
+  "git_repo": "{{cookiecutter.__git_email}}/{{cookiecutter.project_name}}.git",
   "version": "0.1.0",
   "license": ["MIT", "BSD", "ISC", "Apache 2.0", "GNU General Public v3"]
 }
