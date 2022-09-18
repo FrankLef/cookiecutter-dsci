@@ -106,7 +106,7 @@ To delete the old environment use this command
 
 First create the new repo in github
 
-* Give the repo the exact same name as the project. That is keep the underscore in the name when there one. i.e. flproj_todo is also flproj_todo in github.
+* **Give the repo the exact same name as the project**. That is keep the underscore in the name when there one. i.e. flproj_todo is also flproj_todo in github.
 * Don't create `README`, `.gitignore` and `LICENSE` with the new repo they will be overriden anyway.
 
 Then initialize git using
@@ -129,20 +129,24 @@ It is also a good idea to run the hooks against all files when adding a new hook
 
     pre-commit run --all-files
 
-### Step 6 Run `make lint`
+### Step 6 Verify the features
+
+It is also useful to test the features of the new project before embarking in the coding.
+
+#### Code source format and check
 
 To run `isort` and `flake8` and verify all is in order run this make command
 
     make lint
 
-### Step 7 Create the documentation with `mkdocs`
+#### Create the documentation with `mkdocs`
 
 You can also verify that the documentation setup is working by building the site with
 this command
 
     mkdocs serve
 
-### Step 8 `pytest`
+#### Code testing with `pytest`
 
 Finally you can verify that `pytest` is working as expected by using this command wich runs
 the tests from the `tests` directory.
