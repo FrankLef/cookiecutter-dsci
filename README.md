@@ -195,12 +195,12 @@ This is how the new project will be organized.
     │       ├── visualize.py      <- Create visualizations.
     │       ├── features.py       <- Turn raw data into features for modeling.
     │       └── train.py          <- Train and evaluate models.
-    └── tests                 <- All test and fixtures files used by `pytest`.
-        ├── fixtures          <- Where to put example inputs and outputs.
-        │   ├── input.json    <- Test input data.
-        │   └── output.json   <- Test output data.
-        ├── test_etl          <- Test example on `etl.py`.
-        └── test_samples.py   <- Test example to verify `pytest`.
+    └── tests                     <- All test and fixtures files used by `pytest`.
+        ├── fixtures              <- Where to put example inputs and outputs.
+        │   ├── input.json        <- Test input data.
+        │   └── output.json       <- Test output data.
+        ├── test_etl              <- Test example on `etl.py`.
+        └── test_samples.py       <- Test example to verify `pytest`.
 
 [cookiecutter]: https://github.com/audreyr/cookiecutter
 [poetry]: https://pypi.org/project/poetry/
