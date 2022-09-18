@@ -190,12 +190,13 @@ This is how the new project will be organized.
     ├── src                       <- Store the source code.
     │   ├── process.py            <- The CLI entry point for all the processes/pipelines.
     │   └── process               <- Code for the various steps of the processes/pipelines.
-    │       ├──  __init__.py
+    │       ├── __init__.py
     │       ├── etl.py            <- Download, generate, and process data.
     │       ├── visualize.py      <- Create visualizations.
     │       ├── features.py       <- Turn raw data into features for modeling.
     │       └── train.py          <- Train and evaluate models.
     └── tests                     <- All test and fixtures files used by `pytest`.
+        ├── __init__.py
         ├── fixtures              <- Where to put example inputs and outputs.
         │   ├── input.json        <- Test input data.
         │   └── output.json       <- Test output data.
