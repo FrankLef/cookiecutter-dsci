@@ -25,11 +25,14 @@ hello:
 
 poetry_update:
 	poetry update
+	@echo -e "\x1b[1;32mpoetry update ok!\x1b[0m"
 	# use poetry show to check if inconsistency
 	poetry show
-	@echo -e "\x1b[1;32mpoetry update ok!\x1b[0m"
+	@echo -e "\x1b[1;32mpoetry show ok!\x1b[0m"
+	@echo -e "\x1b[1;36mcompleted successfully!\x1b[0m"
 
 lint: isort flake
+	@echo -e "\x1b[1;36mlint completed!\x1b[0m"
 
 isort:
 	# run sort imports
@@ -48,7 +51,7 @@ git_init:
 	git add -A
 	git -c user.name=${git_user} -c user.email=${git_email} commit -m "initialize"
 	git push -u -f origin main
-	@echo -e "\x1b[1;32mgit initialized successfully.\x1b[0m"
+	@echo -e "\x1b[1;32mgit initialized successfully!\x1b[0m"
 	@echo -e "\x7"
 
 test:
