@@ -32,7 +32,7 @@ poetry_update:
 	@echo -e "\x1b[1;36mcompleted successfully!\x1b[0m"
 
 lint: isort flake
-	@echo -e "\x1b[1;36mlint completed!\x1b[0m"
+	@echo -e "\x1b[1;36mcompleted successfully!\x1b[0m"
 
 isort:
 	# run sort imports
