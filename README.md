@@ -116,14 +116,14 @@ Then initialize git using
 ### Step 5 Install `pre-commit`
 
 Once `.git` is setup, make sure to include the pre-commit script in `.git`
-by running this command from the poetry shell
+by running `pre-commit install` from the poetry shell. Also `pre-commit update`
+ensures that the `black`, `flake8` etc. are up-to-date. Sometimes warnings
+appear about the 'rev' field being mutable, using this `pre-commit update`
+usually resolves this.
 
-    poetry run pre-commit install
+These steps are encoded in the Makefile and can be run as follows
 
-Sometimes warnings appear about the 'rev' field being mutable. Using this command
-usually resolves this
-
-    pre-commit autoupdate
+    make pre_commit
 
 It is also a good idea to run the hooks against all files when adding a new hook
 
