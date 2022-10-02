@@ -2,24 +2,18 @@ import hydra
 from hydra.core.hydra_config import HydraConfig
 from omegaconf import DictConfig
 
-cfg_path = "../../config"
 
-
-@hydra.main(version_base=None, config_path=cfg_path, config_name="config")
+@hydra.main(version_base=None, config_path="../../config/etl", config_name="db")
 def show_config(cfg: DictConfig) -> None:
     """Function to process the data"""
-
-    # raw_path = abspath(cfg.acc.path)
-    raw_path = cfg.acc.path
-    print(f"Process data using {raw_path}")
+    print(f"Process data using {cfg.acc.path}")
     print(f"tables used: {cfg.acc.tables}")
 
 
-@hydra.main(version_base=None, config_path=cfg_path, config_name="config")
+@hydra.main(version_base=None, config_path="../../config/etl", config_name="db")
 def show_hydra(cfg: HydraConfig) -> None:
     cfg = HydraConfig.get()
-    print(cfg.job.name)
-    print(cfg.output_subdir)
+    print(f"{cfg.job.name=}")
 
 
 def main() -> None:
