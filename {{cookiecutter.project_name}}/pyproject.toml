@@ -1,13 +1,13 @@
 [tool.poetry]
-name = "{{cookiecutter.project_name}}"
-version = "{{cookiecutter.version}}"
-description = "{{cookiecutter.description}}"
-authors = ["{{cookiecutter.author}} <{{cookiecutter.email}}>"]
-license = "{{cookiecutter.license}}"
+name = "flp_nse"
+version = "0.1.0"
+description = "bi project nse"
+authors = ["François Lefebvre <flefebvre01@hotmail.com>"]
+license = "MIT"
 readme = "README.md"
-homepage = "{{cookiecutter.git_repo}}"
-repository = "{{cookiecutter.git_repo}}"
-documentation = "https://{{cookiecutter.project_name}}.readthedocs.io"
+homepage = "https://github.com/FrankLef/flp_nse.git"
+repository = "https://github.com/FrankLef/flp_nse.git"
+documentation = "https://flp_nse.readthedocs.io"
 classifiers = [
     "Programming Language :: Python :: 3.6",
     "Programming Language :: Python :: 3.7",
@@ -17,7 +17,7 @@ classifiers = [
 ]
 
 [tool.poetry.urls]
-Changelog = "{{cookiecutter.git_repo}}/releases"
+Changelog = "https://github.com/FrankLef/flp_nse.git/releases"
 
 [tool.poetry.dependencies]
 python = "^3.10.6"
@@ -37,6 +37,8 @@ hydra-core = "^1.2.0"
 # pyarrow is better installed with `pip3 install pyarrow` in the local python,
 # don't install pyarrow with poetry add, plenty of error messages ensue.
 pyarrow = "^9.0.0"
+# plug-in to allow flake8 to use pyproject.toml
+Flake8-pyproject = "^1.1.0"
 
 [tool.poetry.dev-dependencies]
 flake8 = "^5.0.4"
@@ -59,6 +61,14 @@ addopts = "-ra -q"
 
 [tool.isort]
 profile = "black"
+
+[tool.flake8]
+# Flake8-pyproject plug-in must be installed for this
+# flake8 keeps issuing error E501 even though all line lengths are fine
+# don't forget to also change .pre-commit-config.yaml
+ignore = ['E501']
+max-line-length = 79  # maximum line length as per PEP-8
+count = true
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]

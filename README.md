@@ -206,6 +206,44 @@ This is how the new project will be organized.
         ├── test_etl              <- Test example on `etl.py`.
         └── test_samples.py       <- Test example to verify `pytest`.
 
+## Setup notes
+
+When using the configurations recommended usually as best practices problems
+were encountered. They are described as well as their solutions below.
+
+### `flake8`
+
+`flake8` reports error **E501** for lines exceeding the 79 length limit
+recommended by PIP-8. Even when `black` is ok with it and even when all lines
+are properly formatted and abide by the rule.
+
+Several hours were spent trying to fix it. The solution used here is
+as follows:
+
+* Modify `pyproject.toml` to include a section **tools.flake8** to tell
+`flake8` to ignore E501 with `ignore=E501`.
+* Add the plugin `flake8-pyproject` to the **tool.poetry.dependencies** section
+of `pyproject.toml` because `flake8` does not use the `pyproject.toml` except
+when the `flake8-pyproject` is installed.
+* Modify `.pre-commit-config.yaml` to add `args: [--ignore=E501]` to the
+flake8 hook.
+
+### `pyarrow`
+
+Use `pyarrow.feather` instead of `feather-format`, `feather.format` exists only
+for backward compatibility. `pyarrow` should be installed with
+`pip3 install pyarrow` in the local python. Don't install `pyarrow` with
+`poetry add pyarrow` or you will get a whole lotof cryptic errors.
+
+### `hydra`
+
+The real name of the hydra package is `hydra-core`, `hydra` is
+another unrelated package. If you install `hydra` you will have several
+unsolveable VS build tools error.
+
+This seemingly stupid mistake took up a lot of time to figure out and
+several other people got also caught by it, judging from what was on the net.
+
 [cookiecutter]: https://github.com/audreyr/cookiecutter
 [poetry]: https://pypi.org/project/poetry/
 [flake8]: https://pypi.org/project/flake8/

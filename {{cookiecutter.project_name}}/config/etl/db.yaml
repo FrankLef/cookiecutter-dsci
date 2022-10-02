@@ -1,0 +1,14 @@
+defaults:
+  - _self_
+  # vailable options are default, disabled, hydra_debug, none
+  - override hydra/hydra_logging: disabled
+  - override hydra/job_logging: disabled
+
+hydra:
+  output_subdir: null
+  run:
+    dir: .
+
+acc:
+  path: C:\\Users\\Public\\MyJob\\DesjCap_cies\\PHT\\db_PHT_V1_xprt.accdb
+  tables: ['tbl_xprt_sales_grp', 'tbl_xprt_part']

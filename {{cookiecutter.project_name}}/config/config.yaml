@@ -7,7 +7,3 @@ hydra:
   output_subdir: null
   run:
     dir: .
-
-acc:
-  path: C:\\Users\\Public\\MyJob\\DesjCap_cies\\PHT\\db_PHT_V1_xprt.accdb
-  tables: ['tbl_xprt_sales_grp', 'tbl_xprt_part']

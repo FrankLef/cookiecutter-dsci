@@ -1,23 +1,31 @@
 import pytest
+import sqlalchemy as sa
+from hydra import compose, initialize
 
 import src.process.etl as etl
 
 
 @pytest.fixture
-def acc_info():
-    out = [
-        r"C:\Users\Public\MyJob\DesjCap_cies\PHT\db_PHT_V1_xprt.accdb",
-        {"tbl_xprt_sales_grp", "tbl_xprt_part"},
-    ]
-    return out
+def acc_path():
+    with initialize(version_base=None, config_path="../config/etl"):
+        cfg = compose(config_name="db")
+        return cfg.acc.path
 
 
-def test_etl(acc_info):
-    out = etl.main(path=acc_info[0], tables=acc_info[1])
-    assert isinstance(out, dict)
-    assert len(out) == len(acc_info)
+def test_with_initialize() -> None:
+    with initialize(version_base=None, config_path="../config/etl"):
+        cfg = compose(config_name="db")
+        target = "C:\\Users\\Public\\MyJob\\DesjCap_cies\\PHT\\db_PHT_V1_xprt.accdb"
+        assert cfg.acc.path == target
+        # print(cfg.acc.tables)
+        assert cfg.acc.tables == ["tbl_xprt_sales_grp", "tbl_xprt_part"]
 
 
-def test_etl_err(acc_info):
+def etl_engine(acc_path):
+    out = etl.build_engine(acc_path)
+    assert isinstance(out, sa.engine)
+
+
+def test_etl_err():
     with pytest.raises(FileNotFoundError):
-        etl.main(path="WRONG", tables=acc_info[1])
+        etl.build_engine("wrong")

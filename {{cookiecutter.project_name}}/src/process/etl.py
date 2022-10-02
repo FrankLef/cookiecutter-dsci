@@ -1,20 +1,19 @@
 import urllib
 from pathlib import Path
 
+import hydra
 import pandas as pd
 import sqlalchemy as sa
+from omegaconf import DictConfig
 from sqlalchemy.exc import SQLAlchemyError
 
 
 def build_engine(path: str) -> sa.engine:
     """Create SQLAlchemy engine for MS Access.
-
     Args:
         path (str): Path to MS Access database.
-
     Returns:
         sa.engine: SQLAlchemy engine for MS Access.
-
     Raises:
         FileNotFoundError: The MS Access file name is invalid.
     """
@@ -22,21 +21,18 @@ def build_engine(path: str) -> sa.engine:
         msg = "\n" + path + "\nis an invalid MS Access DB file name."
         raise FileNotFoundError(msg)
     db_driver = "{Microsoft Access Driver (*.mdb, *.accdb)}"
-    db_path = path
-    conn_str = f"DRIVER={db_driver};" f"DBQ={db_path};" "Mode=Read;"
+    conn_str = f"DRIVER={db_driver};" f"DBQ={path};" "Mode=Read;"
     url_str = urllib.parse.quote_plus(conn_str)
     url_str = rf"access+pyodbc://?odbc_connect={url_str}"
     acc_engine = sa.create_engine(url_str)
     return acc_engine
 
 
-def extract_acc(tables: set[str], engine: sa.engine) -> dict:
+def extract(tables: set[str], engine: sa.engine) -> dict:
     """Extract data from MS Access.
-
     Args:
         tables (set[str]): Names of tables.
         engine (sa.engine): SQLAlchemy engine for MS Access.
-
     Returns:
         dict: Datasets from MS Access.
     """
@@ -58,18 +54,20 @@ def extract_acc(tables: set[str], engine: sa.engine) -> dict:
     return out
 
 
-def main(path: str, tables: set[str]) -> dict:
-    """Extract data from MS Access.
+@hydra.main(version_base=None, config_path="../../config/etl", config_name="db")
+def main(cfg: DictConfig) -> dict:
+    """Extract data from MS Access
 
     Args:
-        path (str): Path to MS Access database.
-        tables (set[str]): Tables/Views to extract from MS Access.
+        cfg (DictConfig): Configuration using hydra.
 
     Returns:
         dict: Datasets from MS Access.
     """
+    path = cfg.acc.path
     acc_engine = build_engine(path=path)
-    raw_data = extract_acc(tables=tables, engine=acc_engine)
+    tables = cfg.acc.tables
+    raw_data = extract(tables=tables, engine=acc_engine)
     # print the shape of every table
     {tbl: print(df.shape) for (tbl, df) in raw_data.items()}
     return raw_data

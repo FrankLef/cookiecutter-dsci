@@ -1,7 +1,7 @@
-project_name := "{{ cookiecutter.project_name }}"
-git_user := "{{ cookiecutter.git_user }}"
-git_email := "{{ cookiecutter.git_email }}"
-git_repo := "{{ cookiecutter.git_repo }}"
+project_name := "flp_nse"
+git_user := "FrankLef"
+git_email := "https://github.com/FrankLef"
+git_repo := "https://github.com/FrankLef/flp_nse.git"
 
 # the first target is the default
 all: hello
@@ -39,16 +39,19 @@ pre_commit:
 	@echo -e "\x1b[1;36mcompleted successfully!\x1b[0m"
 
 
-lint: isort flake
+lint: isort black flake
 	@echo -e "\x1b[1;36mcompleted successfully!\x1b[0m"
 
 isort:
-	# run sort imports
-	isort . -v
+	isort .
 	@echo -e "\x1b[1;32misort ok!\x1b[0m"
 
+black:
+	black src/
+	@echo -e "\x1b[1;32mblack ok!\x1b[0m"
+
 flake:
-	flake8 . -v
+	flake8
 	@echo -e "\x1b[1;32mflake8 ok!\x1b[0m"
 
 git_init:
