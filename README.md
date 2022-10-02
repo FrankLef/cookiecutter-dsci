@@ -160,12 +160,11 @@ the tests from the `tests` directory.
 
 This is how the new project will be organized.
 
-    ├── .gitignore                <- GitHub's Python .gitignore customized for this project.
+    ├── .gitignore                <- GitHub's Python `.gitignore` customized for this project.
     ├── pre-commit-config.yaml    <- Settings for `pre-commit`.
     ├── LICENSE                   <- The project's license.
     ├── Makefile                  <- Scripts to automate tasks.
     ├── mkdocs.yaml               <- Settings for `mkdocs`.
-    ├── noxfile.py                <- Sessions used by `nox`.
     ├── pyproject.toml            <- Configuration file used by `poetry`.
     ├── README.md                 <- The top-level README for developers using this project.
     ├── config                    <- Configuration files used by `hydra`.
