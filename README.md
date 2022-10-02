@@ -169,11 +169,10 @@ This is how the new project will be organized.
     ├── pyproject.toml            <- Configuration file used by `poetry`.
     ├── README.md                 <- The top-level README for developers using this project.
     ├── config                    <- Configuration files used by `hydra`.
-    │   ├── main.yaml             <- Main configuration file.
-    │   └── process               <- Configurations for data processing.
-    │       ├── process01a.yaml   <- Config file.
-    │       └── process02a.yaml   <- Config file.
-    ├── data
+    │   ├── config.yaml           <- Main configuration file used by `hydra`.
+    │   └── etl                   <- Configuration examples for ETL.
+    │       └── db.yaml           <- Configuration file example for database connections.
+    ├── data                      <- Data directories used throghout the project.
     │   ├── 0_raw                 <- The original, immutable data dump.
     │   ├── 0_external            <- Data from third party sources.
     │   ├── 1_interim             <- Intermediate data that has been transformed.
@@ -185,13 +184,13 @@ This is how the new project will be organized.
     │   ├── reference.md          <- Information-oriented documentation.
     │   └── tutorials.md          <- Learning-oriented documentation.
     ├── notebooks                 <- Jupyter notebooks. Naming convention is a number (for ordering),
-    │                                the creator's initials, and a short `_` delimited description, e.g.
-    │                                `01_fl_exploratory_data_analysis.ipynb`.
-    ├── output
-    │   ├── features              <- Fitted and serialized features.
-    │   ├── models                <- Trained and serialized models, model predictions, or model summaries.
-    │   └── reports               <- Generated analyses as HTML, PDF, LaTeX, etc.
-    │       └── data              <- Generated graphics, figures, tables, etc. used in reporting.
+    │   │                            the creator's initials, and a short `_` delimited description, e.g.
+    │   │                            `01_fl_exploratory_data_analysis.ipynb`.
+    │   ├── data                  <- Data used by notebooks.
+    │   └── viz                   <- Visualizations such as plots, figures and tables used by notebooks.
+    ├── reports                   <- Reports, usually in markdown or other formats (pdf, html, etc.).
+    │   ├── data                  <- Data used in reporting.
+    │   └── viz                   <- Visualizations such as plots, figures and tables used in reporting.
     ├── src                       <- Store the source code.
     │   ├── process.py            <- The CLI entry point for all the processes/pipelines.
     │   └── process               <- Code for the various steps of the processes/pipelines.
@@ -200,7 +199,7 @@ This is how the new project will be organized.
     │       ├── visualize.py      <- Create visualizations.
     │       ├── features.py       <- Turn raw data into features for modeling.
     │       └── train.py          <- Train and evaluate models.
-    └── tests                     <- All test and fixtures files used by `pytest`.
+    └── tests                     <- All test and fixtures files used in testing.
         ├── __init__.py
         ├── fixtures              <- Where to put example inputs and outputs.
         │   ├── input.json        <- Test input data.

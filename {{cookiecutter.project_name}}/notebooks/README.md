@@ -1,4 +1,4 @@
-# Notebooks
+# `notebooks` directory
 
 Jupyter notebooks created by {{cookiecutter.project_name}}.
 
