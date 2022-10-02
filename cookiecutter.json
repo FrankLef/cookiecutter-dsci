@@ -1,5 +1,5 @@
 {
-  "project_name": "flproj_todo",
+  "project_name": "flp_todo",
   "__title_name": "{{ cookiecutter.project_name }}.replace('-', ' ').replace('_', ' ').title()",
   "description": "A short description of the data science project.",
   "author": "Fran\u00E7ois Lefebvre",
