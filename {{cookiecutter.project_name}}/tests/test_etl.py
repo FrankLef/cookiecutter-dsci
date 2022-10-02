@@ -15,7 +15,7 @@ def acc_path():
 def test_with_initialize() -> None:
     with initialize(version_base=None, config_path="../config/etl"):
         cfg = compose(config_name="db")
-        target = "C:\\Users\\Public\\MyJob\\DesjCap_cies\\PHT\\db_PHT_V1_xprt.accdb"
+        target = r"C:\\Users\\Public\\MyJob\\DesjCap_cies\\PHT\\db_PHT_V1_xprt.accdb"
         assert cfg.acc.path == target
         # print(cfg.acc.tables)
         assert cfg.acc.tables == ["tbl_xprt_sales_grp", "tbl_xprt_part"]
