@@ -37,11 +37,11 @@ hydra-core = "^1.2.0"
 # pyarrow is better installed with `pip3 install pyarrow` in the local python,
 # don't install pyarrow with poetry add, plenty of error messages ensue.
 pyarrow = "^9.0.0"
-# plug-in to allow flake8 to use pyproject.toml
-Flake8-pyproject = "^1.1.0"
 
 [tool.poetry.dev-dependencies]
 flake8 = "^5.0.4"
+# plug-in to allow flake8 to use pyproject.toml
+Flake8-pyproject = "^1.1.0"
 pep8-naming = "^0.13.2"
 black = "^22.8.0"
 pre-commit = "^2.20.0"
