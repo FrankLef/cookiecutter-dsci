@@ -1,7 +1,6 @@
 import urllib
 from pathlib import Path
 
-import hydra
 import pandas as pd
 import sqlalchemy as sa
 from omegaconf import DictConfig
@@ -54,7 +53,7 @@ def extract(tables: set[str], engine: sa.engine) -> dict:
     return out
 
 
-@hydra.main(version_base=None, config_path="../../config/etl", config_name="db")
+# @hydra.main(version_base=None, config_path="../../config/etl", config_name="db")
 def main(cfg: DictConfig) -> dict:
     """Extract data from MS Access
 
