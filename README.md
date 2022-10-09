@@ -168,6 +168,7 @@ This is how the new project will be organized.
     ├── pyproject.toml            <- Configuration file used by `poetry`.
     ├── README.md                 <- The top-level README for developers using this project.
     ├── config                    <- Configuration files used by `hydra`.
+    ├── __init__.py
     │   ├── config.yaml           <- Main configuration file used by `hydra`.
     │   └── etl                   <- Configuration examples for ETL.
     │       └── db.yaml           <- Configuration file example for database connections.
