@@ -12,7 +12,7 @@ def db_path():
 
 @pytest.fixture
 def db_tables():
-    return settings.msaccess.tables
+    return tuple(settings.msaccess.tables)
 
 
 def test_db_path(db_path):
@@ -22,5 +22,4 @@ def test_db_path(db_path):
 
 
 def test_db_tables(db_tables):
-    db_tables = tuple(db_tables)
     assert db_tables == ("tbl_xprt_sales_grp", "tbl_xprt_part")
