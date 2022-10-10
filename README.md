@@ -169,10 +169,10 @@ This is how the new project will be organized.
     ├── README.md                 <- The top-level README for developers using this project.
     ├── config                    <- Configuration files used by `hydra`.
     ├── __init__.py
-    │   ├── config.yaml           <- Main configuration file used by `hydra`.
+    │   ├── main.py               <- Main configuration file.
     │   └── etl                   <- Configuration examples for ETL.
-    │       └── db.yaml           <- Configuration file example for database connections.
-    ├── data                      <- Data directories used throghout the project.
+    │       └── db.py             <- Configuration file example for database connections.
+    ├── data                      <- Data directories used throughout the project.
     │   ├── 0_raw                 <- The original, immutable data dump.
     │   ├── 0_external            <- Data from third party sources.
     │   ├── 1_interim             <- Intermediate data that has been transformed.

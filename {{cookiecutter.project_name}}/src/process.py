@@ -1,9 +1,11 @@
-import hydra
-from omegaconf import DictConfig
 import process.etl as etl
+from pathlib import Path
+from pydoc import resolve
+import sys
+sys.path.append(str(Path.cwd()))
+
+import config.etl.db as cfg  # noqa
 
 
-@hydra.main(version_base=None, config_path="../config/etl", config_name="db")
-def proc_etl(cfg: DictConfig) -> dict:
-    data = etl.main(cfg)
-    return data
+out = etl.build_engine(cfg.PATH)
+print(type(out))

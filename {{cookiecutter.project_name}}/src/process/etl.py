@@ -3,8 +3,6 @@ from pathlib import Path
 
 import pandas as pd
 import sqlalchemy as sa
-from omegaconf import DictConfig
-from sqlalchemy.exc import SQLAlchemyError
 
 
 def build_engine(path: str) -> sa.engine:
@@ -27,7 +25,7 @@ def build_engine(path: str) -> sa.engine:
     return acc_engine
 
 
-def extract(tables: set[str], engine: sa.engine) -> dict:
+def extract(tables: tuple[str, ...], engine: sa.engine) -> dict:
     """Extract data from MS Access.
     Args:
         tables (set[str]): Names of tables.
@@ -41,7 +39,7 @@ def extract(tables: set[str], engine: sa.engine) -> dict:
         sql_str = "select * from " + tbl
         try:
             df = pd.read_sql(sql=sql_str, con=engine)
-        except SQLAlchemyError as err:
+        except sa.SQLAlchemyError as err:
             # https://stackoverflow.com/questions/2136739/error-handling-in-sqlalchemy
             # msg = str(err.__dict__["orig"])
             msg = str(err)
@@ -53,8 +51,7 @@ def extract(tables: set[str], engine: sa.engine) -> dict:
     return out
 
 
-# @hydra.main(version_base=None, config_path="../../config/etl", config_name="db")
-def main(cfg: DictConfig) -> dict:
+def main(path: str, tables: tuple[str, ...]) -> dict:
     """Extract data from MS Access
 
     Args:
@@ -63,9 +60,7 @@ def main(cfg: DictConfig) -> dict:
     Returns:
         dict: Datasets from MS Access.
     """
-    path = cfg.acc.path
     acc_engine = build_engine(path=path)
-    tables = cfg.acc.tables
     raw_data = extract(tables=tables, engine=acc_engine)
     # print the shape of every table
     {tbl: print(df.shape) for (tbl, df) in raw_data.items()}
