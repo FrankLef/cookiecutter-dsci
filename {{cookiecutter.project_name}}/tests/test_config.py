@@ -16,8 +16,8 @@ def db_tables():
 
 
 def test_db_path(db_path):
-    # assert Path.exists(db_path)
-    assert db_path == "C:/Users/Public/MyJob/DesjCap_cies/PHT/db_PHT_V1_xprt.accdb"
+    target = "C:/Users/Public/MyJob/DesjCap_cies/PHT/db_PHT_V1_xprt.accdb"
+    assert db_path == target
     assert Path(db_path).exists()
 
 
