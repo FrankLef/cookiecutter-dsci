@@ -3,7 +3,7 @@ from pathlib import Path
 
 def set_path(path: str) -> str:
     out = Path("C:/Users/Public/MyJob/DesjCap_cies/PHT/db_PHT_V1_xprt.accdb")
-    if Path.exists(out) == False:
+    if Path.exists(out) is False:
         raise FileNotFoundError("The database file name is invalid.")
     return out
 
