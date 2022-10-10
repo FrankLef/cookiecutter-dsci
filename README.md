@@ -40,6 +40,7 @@ and the packages to build the project are
 
 |package|description|
 |:-----|:-----------------|
+|[dynacom]|Seetings management|
 |[typer]|Command line interface|
 |[requests]|HTTP library for Python|
 |[prefect]|Manage the dataflow|
@@ -161,11 +162,14 @@ the tests from the `tests` directory.
 This is how the new project will be organized.
 
     ├── .gitignore                <- GitHub's Python `.gitignore` customized for this project.
+    ├── config.py                 <- Script used `dynaconf` to manage settings.
     ├── pre-commit-config.yaml    <- Settings for `pre-commit`.
     ├── LICENSE                   <- The project's license.
     ├── Makefile                  <- Scripts to automate tasks.
     ├── mkdocs.yaml               <- Settings for `mkdocs`.
     ├── pyproject.toml            <- Configuration file used by `poetry`.
+    ├── settings.toml             <- Project's settings used by `dynacom`.
+    ├── .secrets.toml             <- Project's secret settings used by `dynacom`.
     ├── README.md                 <- The top-level README for developers using this project.
     ├── config                    <- Configuration files.
     │   ├── __init__.py
@@ -204,6 +208,7 @@ This is how the new project will be organized.
         ├── fixtures              <- Where to put example inputs and outputs.
         │   ├── input.json        <- Test input data.
         │   └── output.json       <- Test output data.
+        ├── test_config           <- Test the project's settings.
         ├── test_etl              <- Test example on `etl.py`.
         └── test_samples.py       <- Test example to verify `pytest`.
 
@@ -258,6 +263,7 @@ several other people got also caught by it, judging from what was on the net.
 [isort]: https://github.com/PyCQA/isort
 [MkDocs]: https://www.mkdocs.org
 [mkdocstrings]: https://mkdocstrings.github.io
+[dynacom]: https://www.dynaconf.com
 [typer]: https://typer.tiangolo.com
 [requests]: https://requests.readthedocs.io/en/latest/
 [prefect]: https://docs.prefect.io

@@ -1,11 +1,13 @@
 import process.etl as etl
-from pathlib import Path
 import sys
+from pathlib import Path
+sys.path.insert(0, str(Path(__file__).parent.parent.absolute()))
+from config import settings  # noqa
 
-sys.path.append(str(Path.cwd()))
 
-import config.etl.db as cfg  # noqa
+cfg = settings.msaccess
+print(cfg.path)
 
 
-out = etl.build_engine(cfg.PATH)
-print(type(out))
+# out = etl.build_engine(cfg.path)
+# print(type(out))

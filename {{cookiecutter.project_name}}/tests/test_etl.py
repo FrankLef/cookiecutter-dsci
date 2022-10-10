@@ -1,17 +1,18 @@
 import pytest
 import sqlalchemy as sa
-import config.etl.db as cfg
+
+from config import settings
 import src.process.etl as etl
 
 
 @pytest.fixture
 def db_path():
-    return cfg.PATH
+    return settings.msaccess.path
 
 
 @pytest.fixture
 def db_tables():
-    return cfg.TABLES
+    return settings.msaccess.tables
 
 
 def test_etl_engine(db_path):
