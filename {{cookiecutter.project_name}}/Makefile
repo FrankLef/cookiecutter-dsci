@@ -51,7 +51,8 @@ black:
 	@echo -e "\x1b[1;32mblack ok!\x1b[0m"
 
 flake:
-	flake8
+	# ignore error on long line
+	flake8 --ignore=E501
 	@echo -e "\x1b[1;32mflake8 ok!\x1b[0m"
 
 git_init:
